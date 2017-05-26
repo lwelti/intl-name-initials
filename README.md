@@ -1,7 +1,7 @@
 # intl-name-initials
 
 
-##format
+## format
 ```javascript
 
 var intl-nameIntials = require('intl-name-initials');
@@ -12,7 +12,7 @@ var nameIntials = intl-name-initials.format( name );
 //output: LW
 ```
 
-##hasInitials
+## hasInitials
 
 ```javascript
 var intl-nameIntials = require('intl-name-initials');
