@@ -25,6 +25,14 @@ var name = { lastName: '李', firstName: '小龍'};
 var nameIntials = initials.format( name );
 //output: undefined 
 
+Example 3: Hong Gildong
+
+var initials = new intlNameInitials();
+var name = {lastName: '홍', firstName: '길동'};
+
+var nameIntials = initials.format( name );
+//output: 홍
+
 ```
 
 
