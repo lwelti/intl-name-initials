@@ -8,35 +8,22 @@ Provide the Name Initials based on the Script of the Language.
 
 Example 1:
 
-var intl-name = require('intl-name-initials');
+var intlNameInitials = require('intl-name-initials');
+var initials = new intlNameInitials();
 
-var name = { firstName: 'Lucas', middlename: 'Christian', lastName: 'Welti'};
+var name = { firstName: 'Juan', lastName: 'Perez'};
 
-var nameIntials = intl-name.format( name ); 
-//output: LW
+var nameIntials = initials.format( name );
+//output: JP
 
 Example 2: Bruce Lee
 
-var name = { firstName: '李', lastName: '小龍'};
+var initials = new intlNameInitials();
+var name = { lastName: '李', firstName: '小龍'};
 
-var nameIntials = intl-name.format( name ); 
+var nameIntials = initials.format( name );
 //output: undefined 
 
 ```
 
-## hasInitials
-
-```javascript
-var intl-name = require('intl-name-initials');
-
-var name = { firstName: 'Lucas', middlename: 'Christian', lastName: 'Welti'};
-
-var nameIntials = intl-name.hasInitials( name ); 
-//output: true
-
-var name = { firstName: '李', lastName: '小龍'};
-
-var nameIntials = intl-name.hasInitials( name ); 
-//output: false
-```
 
