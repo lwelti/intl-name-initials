@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/lwelti/intl-name-initials",
   "scripts": {
-
+    "test": "mocha"
   },
   "devDependencies": {
-
+    "mocha": "^3.4.2"
   }
 }

@@ -2,6 +2,7 @@
 
 Provide the Name Initials based on the Script of the Language.
 
+<img src="JPInitials.png">
 
 ## format
 ```javascript
