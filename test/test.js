@@ -27,3 +27,45 @@ describe('Spanish characters',function() {
     });
 
 });
+
+describe('Numerical Characters',function() {
+    var intlNameInitials = new IntlNameInitials();
+    var CLDRCharacters = '1a 2b 3c 4d 1 2 3 4 5 6 7 8 9 0 $ % ^ & * !';
+    var exemplarCharacters = CLDRCharacters.split(' ');
+    var lastName = 'Miranda';
+    it('testing exemplarCharacters ', function() {
+        for( var i=0;i<exemplarCharacters.length;i++) {
+            var name = {firstName: exemplarCharacters[i], lastName: lastName};
+            assert.equal('M', intlNameInitials.format(name));
+        }
+    });
+
+});
+
+describe('Greek Characters',function() {
+    var intlNameInitials = new IntlNameInitials();
+    var CLDRCharacters = 'α ά β γ δ ε έ ζ η ή θ ι ϊ κ λ μ ν ξ ο ό π ρ σ ς τ υ ύ ϋ ΰ φ χ ψ ω ώ';
+    var exemplarCharacters = CLDRCharacters.split(' ');
+    var lastName = 'Miranda';
+    it('testing exemplarCharacters ', function() {
+        for( var i=0;i<exemplarCharacters.length;i++) {
+            var name = {firstName: exemplarCharacters[i], lastName: lastName};
+            assert.equal(exemplarCharacters[i].toUpperCase() + 'M', intlNameInitials.format(name));
+        }
+    });
+
+});
+
+describe('Cyrillic Characters',function() {
+    var intlNameInitials = new IntlNameInitials();
+    var CLDRCharacters = 'а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я';
+    var exemplarCharacters = CLDRCharacters.split(' ');
+    var lastName = 'Miranda';
+    it('testing exemplarCharacters ', function() {
+        for( var i=0;i<exemplarCharacters.length;i++) {
+            var name = {firstName: exemplarCharacters[i], lastName: lastName};
+            assert.equal(exemplarCharacters[i].toUpperCase() + 'M', intlNameInitials.format(name));
+        }
+    });
+
+});

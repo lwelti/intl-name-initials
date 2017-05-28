@@ -74,7 +74,7 @@ function _isHangul(l){
 
 function _initials(letter) {
     var l = letter.charCodeAt(0);
-    if ((_isBasicLatin(l)) || ( _isLatin1Supplement(l)) || ( _isLatinExtendedA(l)) || (_isLatinExtendedA(l))) {
+    if ((_isBasicLatin(l)) || ( _isLatin1Supplement(l)) || ( _isLatinExtendedA(l)) || (_isLatinExtendedA(l)) || _isGreek(l) || _isCyrilic(l))  {
         return letter;
     }
     return '';
@@ -82,7 +82,7 @@ function _initials(letter) {
 
 function _isSupportedInitials(letter) {
     var l = letter.charCodeAt(0);
-    if ((_isBasicLatin(l)) || ( _isLatin1Supplement(l)) || ( _isLatinExtendedA(l)) || (_isLatinExtendedA(l))) {
+    if ((_isBasicLatin(l)) || ( _isLatin1Supplement(l)) || ( _isLatinExtendedA(l)) || (_isLatinExtendedA(l)) || _isGreek(l) || _isCyrilic(l)) {
         return true;
     }
     return false;
