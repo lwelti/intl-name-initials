@@ -18,10 +18,12 @@ This is handy if you need to build an interface where you don't have the Profile
 ## Usage
 
 ```js
-var intlNameInitials = require('intl-name-initials');
+var IntlNameInitials = require('intl-name-initials');
+
 var name = { firstName: 'Juan', lastName: 'Perez'};
 
-var nameIntials = initials.format( name );
+var intlNameInitials = new IntlNameInitials();
+var nameIntials = intlNameInitials.format( name );
 console.log(nameInitials);
 // > JP
 
@@ -56,10 +58,11 @@ At this moment no options are supported.
 
 Example 1: Juan Pérez
 
-var intlNameInitials = require('intl-name-initials');
+var IntlNameInitials = require('intl-name-initials');
 
 var name = { firstName: 'Juan', lastName: 'Pérez'};
 
+var intlNameInitials = new IntlNameInitials();
 var nameIntials = intlNameInitials.format( name );
 //output: JP
 ```
@@ -67,8 +70,10 @@ var nameIntials = intlNameInitials.format( name );
 ### Example 2
 
 ```js
+var IntlNameInitials = require('intl-name-initials');
 
 var name = {lastName: '홍', firstName: '길동'};
+var intlNameInitials = new IntlNameInitials();
 
 var nameIntials = intlNameInitials.format( name );
 //output: 홍
@@ -79,9 +84,11 @@ var nameIntials = intlNameInitials.format( name );
 Initials **not** supported.
 
 ```js
+var IntlNameInitials = require('intl-name-initials');
 
 var name = { lastName: '李', firstName: '小龍'};
 
+var intlNameInitials = new IntlNameInitials();
 var nameIntials = intlNameInitials.format( name );
 //output: undefined
 
@@ -101,3 +108,4 @@ At this moment only specific Range of Unicode Characters are supported:
 
 
 ## License
+© Lucas Welti

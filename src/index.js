@@ -13,7 +13,7 @@ function _upperCase(letter) {
 }
 
 function _isBasicLatin(l) {
-    if (l > 64 && l < 90) {
+    if ((l > 64 && l < 91) || (l > 96 && l < 123)) {
         return true;
     }
     return false;
@@ -141,4 +141,4 @@ intlNameInitials.prototype.format = function (name, options) {
 
 };
 
-module.exports = new intlNameInitials();
+module.exports = intlNameInitials;
