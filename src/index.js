@@ -141,4 +141,4 @@ intlNameInitials.prototype.format = function (name, options) {
 
 };
 
-module.exports = intlNameInitials;
+module.exports = new intlNameInitials();

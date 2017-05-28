@@ -5,7 +5,6 @@
   "main": "src/index.js",
   "files": [
     "src/",
-    "examples/",
     "README.md"
   ],
   "repository": {
