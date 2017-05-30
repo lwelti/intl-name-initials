@@ -108,4 +108,4 @@ At this moment only specific Range of Unicode Characters are supported:
 
 
 ## License
-© Lucas Welti
+MIT © Lucas Welti
