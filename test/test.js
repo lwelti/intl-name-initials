@@ -69,3 +69,31 @@ describe('Cyrillic Characters',function() {
     });
 
 });
+
+describe('Turkish alphabet',function() {
+    var intlNameInitials = new IntlNameInitials();
+    var CLDRCharacters = 'a b c ç d e f g ğ h ı i j k l m n o ö p r s ş t u ü v y z';
+    var exemplarCharacters = CLDRCharacters.split(' ');
+    var upperCase = 'A B C Ç D E F G Ğ H I İ J K L M N O Ö P Q R S Ş T U Ü V Y Z';
+    var lastName = 'Miranda';
+    it('testing exemplarCharacters ', function() {
+        for( var i=0;i<exemplarCharacters.length;i++) {
+            var name = {firstName: exemplarCharacters[i], lastName: lastName};
+            assert.equal(exemplarCharacters[i].toUpperCase() + 'M', intlNameInitials.format(name));
+        }
+    });
+
+});
+
+describe('Arabic alphabet - should return undefined',function() {
+    var intlNameInitials = new IntlNameInitials();
+    var CLDRCharacters = 'ء أ ؤ إ ئ ا آ ب ة ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ى ي';
+    var exemplarCharacters = CLDRCharacters.split(' ');
+    it('testing exemplarCharacters ', function() {
+        for( var i=0;i<exemplarCharacters.length;i++) {
+            var name = {firstName: exemplarCharacters[i]};
+            assert.equal(undefined, intlNameInitials.format(name));
+        }
+    });
+
+});

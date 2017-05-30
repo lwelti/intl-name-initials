@@ -107,5 +107,11 @@ At this moment only specific Range of Unicode Characters are supported:
 * [Hangul](http://www.programminginkorean.com/programming/hangul-in-unicode/hangul-syllables-uac00-ud7a3/)
 
 
+## FAQ
+
+* Is Arabic supported?
+
+Name Initials for Arabic names are not a common practice. If you pass an Arabic name then `format()` will return **undefined**
+
 ## License
 MIT © Lucas Welti

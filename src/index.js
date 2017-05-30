@@ -10,6 +10,11 @@ function _firstLetter(text) {
 
 function _upperCase(letter) {
 
+    if (letter === 'ı'){
+        return 'I';
+    }
+
+    return letter.toUpperCase();
 }
 
 function _isHangul(l){
@@ -50,9 +55,27 @@ function _isSupportedInitials(letter) {
 
 function _formatLatinInitials(a, b) {
 
-    var initials = pattern.replace('{0}', _initials(a));
-    initials = initials.replace('{1}', _initials(b));
-    return initials.toUpperCase();
+    var initials = pattern.replace('{0}', _upperCase(_initials(a)));
+    initials = initials.replace('{1}', _upperCase(_initials(b)));
+    return initials;
+
+}
+
+function isThai(a){
+
+    var thaiRegex = '[\u0E01-\u0E3A\u0E40-\u0E5B]';
+    var re = new RegExp(thaiRegex,'i');
+
+    if (a.length === 1){
+        return true;
+    } else {
+        var letter = _firstLetter(a);
+        if (re.test(a)) {
+            return true;
+        }
+    }
+    return false;
+
 }
 
 function isCJK(a){
