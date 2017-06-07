@@ -97,3 +97,19 @@ describe('Arabic alphabet - should return undefined',function() {
     });
 
 });
+
+describe('Bad params', function(){
+    var intlNameInitials = new IntlNameInitials();
+    it('testing null name', function() {
+       assert.equal(undefined, intlNameInitials.format(null));
+
+    });
+    it('testing null name', function() {
+        assert.equal('P', intlNameInitials.format({firstName: null, lastName: 'Perez'}));
+
+    });
+    it('testing null name', function() {
+        assert.equal('J', intlNameInitials.format({firstName: 'Juan', lastName: null}));
+
+    });
+});

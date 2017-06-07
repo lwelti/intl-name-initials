@@ -103,11 +103,24 @@ intlNameInitials.prototype.format = function (name, options) {
         a = '',
         b = '';
 
+    if (name === null || typeof name !== 'object' ) {
+        return initials;
+    }
+
     if (name.hasOwnProperty("firstName")) {
-        a = _firstLetter(name.firstName);
+        if (name.firstName === null || name.firstName.length === 0){
+            a = '';
+        } else {
+            a = _firstLetter(name.firstName);
+        }
     }
     if (name.hasOwnProperty("lastName")) {
-        b = _firstLetter(name.lastName);
+        if (name.lastName === null || name.lastName.length === 0){
+            b = '';
+        } else {
+            b = _firstLetter(name.lastName);
+        }
+
     }
     if (_isSupportedInitials(a) || _isSupportedInitials(b)) {
         initials = _formatLatinInitials(a, b);
@@ -115,9 +128,14 @@ intlNameInitials.prototype.format = function (name, options) {
 
     // for CJK
     if (name.hasOwnProperty("lastName")){
-            if (isCJK(name.lastName)){
+
+        if (name.lastName === null || name.lastName.length === 0){
+
+        } else {
+            if (isCJK(name.lastName)) {
                 initials = name.lastName;
             }
+        }
     }
 
     return initials;
