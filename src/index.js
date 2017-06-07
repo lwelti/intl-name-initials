@@ -102,29 +102,28 @@ intlNameInitials.prototype.format = function (name, options) {
     var initials = undefined,
         a = '',
         b = '';
+    var fields = ['firstName', 'lastName'],
+        initialName = { firstName : '', lastName: '' };
 
     if (name === null || typeof name !== 'object' ) {
         return initials;
     }
 
-    if (name.hasOwnProperty("firstName")) {
-        if (name.firstName === null || name.firstName.length === 0){
-            a = '';
-        } else {
-            a = _firstLetter(name.firstName);
-        }
-    }
-    if (name.hasOwnProperty("lastName")) {
-        if (name.lastName === null || name.lastName.length === 0){
-            b = '';
-        } else {
-            b = _firstLetter(name.lastName);
+    fields.forEach(function(field){
+        if (name.hasOwnProperty(field)) {
+            if (name[field] === null || name[field].length === 0){
+                // Nothing to do. but keeping it as placeholder
+            } else {
+                if (_isSupportedInitials(_firstLetter(name[field]))) {
+                    initialName[field] = _firstLetter(name[field]);
+                }
+            }
         }
 
-    }
-    if (_isSupportedInitials(a) || _isSupportedInitials(b)) {
-        initials = _formatLatinInitials(a, b);
-    }
+    });
+
+        initials = _formatLatinInitials(initialName.firstName, initialName.lastName);
+
 
     // for CJK
     if (name.hasOwnProperty("lastName")){
@@ -137,7 +136,9 @@ intlNameInitials.prototype.format = function (name, options) {
             }
         }
     }
-
+    if (initials.length === 0){
+        return undefined;
+    }
     return initials;
 
 };
