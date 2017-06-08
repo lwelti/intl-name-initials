@@ -53,13 +53,6 @@ function _isSupportedInitials(letter) {
     return false;
 }
 
-function _formatLatinInitials(a, b) {
-
-    var initials = pattern.replace('{0}', _upperCase(_initials(a)));
-    initials = initials.replace('{1}', _upperCase(_initials(b)));
-    return initials;
-
-}
 
 function isThai(a){
 
@@ -99,14 +92,14 @@ function isCJK(a){
 
 intlNameInitials.prototype.format = function (name, options) {
 
-    var initials = undefined,
+    var initials = '',
         a = '',
         b = '';
     var fields = ['firstName', 'lastName'],
         initialName = { firstName : '', lastName: '' };
 
     if (name === null || typeof name !== 'object' ) {
-        return initials;
+        return undefined;
     }
 
     fields.forEach(function(field){
@@ -116,13 +109,12 @@ intlNameInitials.prototype.format = function (name, options) {
             } else {
                 if (_isSupportedInitials(_firstLetter(name[field]))) {
                     initialName[field] = _firstLetter(name[field]);
+                    initials = initials + _upperCase(_initials(initialName[field]));
                 }
             }
         }
 
     });
-
-        initials = _formatLatinInitials(initialName.firstName, initialName.lastName);
 
 
     // for CJK

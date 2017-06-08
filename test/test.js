@@ -112,4 +112,9 @@ describe('Bad params', function(){
         assert.equal('J', intlNameInitials.format({firstName: 'Juan', lastName: null}));
 
     });
+
+    it('testing null name', function() {
+        assert.equal(undefined, intlNameInitials.format({firstName: null, lastName: null}));
+
+    });
 });
