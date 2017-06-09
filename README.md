@@ -1,5 +1,7 @@
 # intl-name-initials
 
+[![Build Status](https://travis-ci.org/lwelti/intl-name-initials.svg?branch=develop)](https://travis-ci.org/lwelti/intl-name-initials)
+
 ## Introduction
 Provide the Name Initials if this is supported by the Language (Script) of the name.
 
